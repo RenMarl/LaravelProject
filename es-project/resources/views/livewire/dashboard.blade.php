@@ -22,10 +22,11 @@
                         <div class="overflow-hidden" style="width: 735px;">
                             <div id="note" class="ps-2">
                                 <img src="img/features-fashion.jpg" class="img-fluid rounded-circle border border-3 border-primary me-2" style="width: 30px; height: 30px;" alt="">
-                                <a href="#"><p class="text-white mb-0 link-hover">Undone.</p></a>
+                                <a href="#"><p class="text-white mb-0 link-hover">{{ Auth::user()->name }}.</p></a>
                             </div>
                         </div>
                     </div>
+                    
                     <div class="top-link flex-lg-wrap">
                         <i class="fas fa-calendar-alt text-white border-end border-secondary pe-2 me-2"> <span class="text-body">Tuesday, Sep 12, 2024</span></i>
                         <div class="d-flex icon">
@@ -57,16 +58,16 @@
                             <a href="index.html" class="nav-item nav-link active">Home</a>
                             <a href="detail-page.html" class="nav-item nav-link">Detail  Page</a>
                             <a href="404.html" class="nav-item nav-link">404 Page</a>
+                            
+                            <a href="contact.html" class="nav-item nav-link">Contact Us</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Dropdown</a>
                                 <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                    <a href="#" class="dropdown-item">Dropdown 1</a>
-                                    <a href="#" class="dropdown-item">Dropdown 2</a>
-                                    <a href="#" class="dropdown-item">Dropdown 3</a>
-                                    <a href="#" class="dropdown-item">Dropdown 4</a>
+                                    <a class="dropdown-item {{ (request()->is('login')) ? 'active' : '' }}" href="/login" wire:navigate>Login</a>
+                                    <a class="dropdown-item {{ (request()->is('register')) ? 'active' : '' }}" href="/register" wire:navigate>Register</a>
+                                    <livewire:logout />
                                 </div>
                             </div>
-                            <a href="contact.html" class="nav-item nav-link">Contact Us</a>
                         </div>
                        
                     </div>
