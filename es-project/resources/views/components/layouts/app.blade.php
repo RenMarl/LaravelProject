@@ -68,7 +68,7 @@
         <script src="{{asset('frontend/lib/owlcarousel/owl.carousel.min.js')}}"></script>
         
 
-        <!-- Template Javasc -->
+        <!-- Template Javascript -->
         <script src="{{asset('frontend/js/main.js')}}"></script>
     </body>
 </html>
