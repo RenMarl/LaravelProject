@@ -1,0 +1,36 @@
+-- Truncate the table if it exists (optional)
+
+
+-- Insert data into the fares table
+INSERT INTO es_project.fares (route, distance, regular_fare, discounted_fare) VALUES
+    ('BATO POB. TO SIPI', 1.0, 14.00, 12.00),
+    ('BATO POB. TO GUINOBATAN', 1.7, 16.00, 14.00),
+    ('SIPI TO BINANUAHAN', 3.8, 17.00, 15.00),
+    ('GUINOBATAN TO BINANUAHAN', 3.1, 17.00, 15.00),
+    ('BATO POB. TO SAN ANDRES', 3.0, 17.00, 15.00),
+    ('BATO POB. TO CABUGAO', 4.1, 17.00, 15.00),
+    ('BATO POB. TO BINANUAHAN', 4.8, 18.00, 16.00),
+    ('BATO POB. TO MARINAWA', 5.7, 20.00, 18.00),
+    ('POBLACION AREA', 1.0, 14.00, 12.00),
+    ('BATO POB. TO BATALAY CHURCH', 3.0, 16.00, 14.00),
+    ('BATO POB. TO SITIO TAGAON', 3.5, 20.00, 18.00),
+    ('BATO POB. TO PANANAOGAN', 7.0, 30.00, 25.00),
+    ('BATO POB. TO BITAOGAN', 8.0, 45.00, 35.00),
+    ('BATO POB. TO BOTE', 9.0, 45.00, 35.00),
+    ('BATO POB. TO CARORIAN', 12.0, 50.00, 40.00),
+    ('BATO POB. TO MINTAY', 1.2, 14.00, 14.00),
+    ('BATO POB. TO TALISAY', 2.35, 16.00, 14.00),
+    ('BATO POB. TO LIBJO', 2.8, 16.00, 14.00),
+    ('BATO POB. TO BAGUMBAYAN', 3.1, 16.00, 14.00),
+    ('BATO POB. TO STA. ISABEL', 3.4, 16.00, 14.00),
+    ('BATO POB. TO SAN PEDRO', 4.5, 16.00, 14.00),
+    ('BATO POB. TO SAN ROQUE', 5.3, 18.00, 15.00),
+    ('BATO POB. TO BUENAVISTA', 8.0, 22.00, 18.00),
+    ('BATO POB. TO CAGRARAY', 13.0, 45.00, 35.00),
+    ('BATO POB. TO TILIS', 0.5, 14.00, 12.00),
+    ('BATO POB. TO OGUIS', 2.0, 17.00, 15.00),
+    ('BATO POB. TO AROYAO PEQUEÑO', 3.9, 21.00, 18.00),
+    ('SIPI TO BALONGBONG', 1.5, 14.00, 12.00),
+    ('SIPI TO SIBACUNGAN', 3.0, 16.00, 14.00),
+    ('SIBACUNGAN TO CABUGAO/BINANUAHAN', 5.25, 16.00, 14.00),
+    ('SIBACUNGAN TO MARINAWA', 5.5, 18.00, 15.00);

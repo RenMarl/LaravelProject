@@ -35,6 +35,9 @@
                         <span wire:loading class="col-md-3 offset-md-5 text-primary">Processing...</span>
                     </div>
                 </form>
+                <div class="mb-3 row">
+                    <a href="{{ route('register') }}" class="col-md-3 offset-md-5 btn btn-secondary">Register</a> 
+                </div>
             </div>
         </div>
     </div>    

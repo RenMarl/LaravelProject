@@ -1,7 +1,7 @@
 <div>
     <!-- Simplicity is the ultimate sophistication. - Leonardo da Vinci -->
-    <!-- Spinner Start -->
-    <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+     <!-- Spinner Start -->
+     <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" role="status"></div>
     </div>
     <!-- Spinner End -->
@@ -17,27 +17,21 @@
                             <i class="fas fa-bolt text-white"></i>
                         </span>
                         <div class="pe-2 me-3 border-end border-white d-flex align-items-center">
-                            <p class="mb-0 text-white fs-6 fw-normal">Trending</p>
+                            <p class="mb-0 text-white fs-6 fw-normal">-</p>
                         </div>
                         <div class="overflow-hidden" style="width: 735px;">
                             <div id="note" class="ps-2">
-                                <img src="img/features-fashion.jpg" class="img-fluid rounded-circle border border-3 border-primary me-2" style="width: 30px; height: 30px;" alt="">
-                                <a href="#"><p class="text-white mb-0 link-hover">{{ Auth::user()->name }}.</p></a>
+                                {{-- <img src="#" class="img-fluid rounded-circle border border-3 border-primary me-2" style="width: 30px; height: 30px;" alt=""> --}}
+                                <a href="#"><p class="text-white mb-0 link-hover">Welcome! {{ Auth::user()->name }} </p></a>
                             </div>
                         </div>
                     </div>
-                    
                     <div class="top-link flex-lg-wrap">
-                        <i class="fas fa-calendar-alt text-white border-end border-secondary pe-2 me-2"> <span class="text-body">Tuesday, Sep 12, 2024</span></i>
+                        <i class="fas fa-calendar-alt text-white border-end border-secondary pe-2 me-2"> <span class="text-body">{{ now()->format('l, F d, Y') }}</span></i>
                         <div class="d-flex icon">
                             <p class="mb-0 text-white me-2">Follow Us:</p>
                             <a href="" class="me-2"><i class="fab fa-facebook-f text-body link-hover"></i></a>
-                            <a href="" class="me-2"><i class="fab fa-twitter text-body link-hover"></i></a>
-                            <a href="" class="me-2"><i class="fab fa-instagram text-body link-hover"></i></a>
-                            <a href="" class="me-2"><i class="fab fa-youtube text-body link-hover"></i></a>
-                            <a href="" class="me-2"><i class="fab fa-linkedin-in text-body link-hover"></i></a>
-                            <a href="" class="me-2"><i class="fab fa-skype text-body link-hover"></i></a>
-                            <a href="" class=""><i class="fab fa-pinterest-p text-body link-hover"></i></a>
+           
                         </div>
                     </div>
                 </div>
@@ -46,30 +40,36 @@
         <div class="container-fluid bg-light">
             <div class="container px-0">
                 <nav class="navbar navbar-light navbar-expand-xl">
-                    <a href="index.html" class="navbar-brand mt-3">
-                        <p class="text-primary display-6 mb-2" style="line-height: 0;">Undone</p>
-                        <small class="text-body fw-normal" style="letter-spacing: 12px;">Undone</small>
+                    <a href="#" class="navbar-brand mt-3">
+                        <p class="text-primary display-6 mb-2" style="line-height: 0;">TriCat</p>
+                        <small class="text-body fw-normal" style="letter-spacing: 12px;">Tricy Fares</small>
                     </a>
                     <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <span class="fa fa-bars text-primary"></span>
                     </button>
                     <div class="collapse navbar-collapse bg-light py-3" id="navbarCollapse">
                         <div class="navbar-nav mx-auto border-top">
-                            <a href="index.html" class="nav-item nav-link active">Home</a>
-                            <a href="detail-page.html" class="nav-item nav-link">Detail  Page</a>
-                            <a href="404.html" class="nav-item nav-link">404 Page</a>
-                            
-                            <a href="contact.html" class="nav-item nav-link">Contact Us</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Dropdown</a>
-                                <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                    <a class="dropdown-item {{ (request()->is('login')) ? 'active' : '' }}" href="/login" wire:navigate>Login</a>
-                                    <a class="dropdown-item {{ (request()->is('register')) ? 'active' : '' }}" href="/register" wire:navigate>Register</a>
-                                    <livewire:logout />
-                                </div>
-                            </div>
+                                          
                         </div>
-                       
+                        <div class="d-flex flex-nowrap border-top pt-3 pt-xl-0">
+                            <div class="d-flex">
+                                <img src="img/weather-icon.png" class="img-fluid w-100 me-2" alt="">
+                                <div class="d-flex align-items-center">
+                                    <strong class="fs-4 text-secondary">sas</strong>
+                                    <div class="d-flex flex-column ms-2" style="width: 150px;">
+                                        <span class="text-body">Philippines</span>
+                                        <small id="live-time"></small>
+                                    </div>
+                                </div>
+                                <li class="nav-item dropdown me-auto"> 
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Logout?
+                                    </a>
+                                    <livewire:logout />
+                                </li>
+                            </div>
+                            <button class="btn-search btn border border-primary btn-md-square rounded-circle bg-white my-auto" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
+                        </div>
                     </div>
                 </nav>
             </div>
@@ -105,39 +105,20 @@
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="row g-4 align-items-center features-item">
                         <div class="col-4">
-                            <div class="rounded-circle position-relative">
-                                <div class="overflow-hidden rounded-circle">
-                                    <img src="img/features-sports-1.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
-                                </div>
-                                
-                            </div>
+                            
                         </div>
                        
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="row g-4 align-items-center features-item">
-                        <div class="col-4">
-                            <div class="rounded-circle position-relative">
-                                <div class="overflow-hidden rounded-circle">
-                                    <img src="img/features-technology.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
-                                </div>
-                                
-                            </div>
-                        </div>
+                        
                        
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="row g-4 align-items-center features-item">
-                        <div class="col-4">
-                            <div class="rounded-circle position-relative">
-                                <div class="overflow-hidden rounded-circle">
-                                    <img src="img/features-fashion.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
-                                </div>
-                                
-                            </div>
-                        </div>
+                        
                         <div class="col-8">
                            
                         </div>
@@ -145,14 +126,7 @@
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="row g-4 align-items-center features-item">
-                        <div class="col-4">
-                            <div class="rounded-circle position-relative">
-                                <div class="overflow-hidden rounded-circle">
-                                    <img src="img/features-life-style.jpg" class="img-zoomin img-fluid rounded-circle w-100" alt="">
-                                </div>
-                                
-                            </div>
-                        </div>
+                        
                         <div class="col-8">
                             
                         </div>
@@ -162,10 +136,26 @@
         </div>
     </div>
     <!-- Features End -->
+    <div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                @livewire('user-fares') 
+            </div>
+        </div>
+    </div>
+    <div class="container"><a href="{{ route('weather') }}" class="btn btn-primary">View Weather</a></div>
+</div>
+<br>
+<br>
+
+
+    
+    
 
 
     <!-- Main Post Section Start -->
-    <div class="container-fluid py-5">
+    {{-- <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="row g-4">
                 <div class="col-lg-7 col-xl-8 mt-0">
@@ -319,7 +309,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Main Post Section End -->
 
 
@@ -327,7 +317,7 @@
 
 
     <!-- Latest News Start -->
-    <div class="container-fluid latest-news py-5">
+    {{-- <div class="container-fluid latest-news py-5">
         <div class="container py-5">
             <h2 class="mb-4">Latest News</h2>
             <div class="latest-news-carousel owl-carousel">
@@ -403,12 +393,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Latest News End -->
 
 
     <!-- Most Populer News Start -->
-    <div class="container-fluid populer-news py-5">
+    {{-- <div class="container-fluid populer-news py-5">
         <div class="container py-5">
             <div class="tab-class mb-4">
                 <div class="row g-4">
@@ -1265,7 +1255,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Most Populer News End -->
 
 
@@ -1276,20 +1266,19 @@
                 <div class="row g-4">
                     <div class="col-lg-3">
                         <a href="#" class="d-flex flex-column flex-wrap">
-                            <p class="text-white mb-0 display-6">Newsers</p>
-                            <small class="text-light" style="letter-spacing: 11px; line-height: 0;">Newspaper</small>
+                            <p class="text-white mb-0 display-6">TriCat</p>
+                            <small class="text-light" style="letter-spacing: 11px; line-height: 0;">Catanduanes</small>                          
                         </a>
                     </div>
-                    
                 </div>
             </div>
             <div class="row g-5">
                 <div class="col-lg-6 col-xl-3">
                     <div class="footer-item-1">
                         <h4 class="mb-4 text-white">Get In Touch</h4>
-                        <p class="text-secondary line-h">Address: <span class="text-white">123 Philippines</span></p>
-                        <p class="text-secondary line-h">Email: <span class="text-white">Example@gmail.com</span></p>
-                        <p class="text-secondary line-h">Phone: <span class="text-white">+0123 4567 8910</span></p>
+                        <p class="text-secondary line-h">Address: <span class="text-white">Catanduanes, Philippines</span></p>
+                        <p class="text-secondary line-h">Email: <span class="text-white">rmtt0987654321@gmail.com</span></p>
+                        <p class="text-secondary line-h">Phone: <span class="text-white">+63 999 475 7005</span></p>
                         <div class="d-flex line-h">
                             <a class="btn btn-light me-2 btn-md-square rounded-circle" href=""><i class="fab fa-twitter text-dark"></i></a>
                             <a class="btn btn-light me-2 btn-md-square rounded-circle" href=""><i class="fab fa-facebook-f text-dark"></i></a>
@@ -1298,7 +1287,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-xl-3">
+                {{-- <div class="col-lg-6 col-xl-3">
                     <div class="footer-item-2">
                         <div class="d-flex flex-column mb-4">
                             <h4 class="mb-4 text-white">Recent Posts</h4>
@@ -1345,8 +1334,8 @@
                         <a class="btn-link text-white" href=""><i class="fas fa-angle-right text-white me-2"></i> Technology</a>
                         <a class="btn-link text-white" href=""><i class="fas fa-angle-right text-white me-2"></i> Intertainment</a>
                     </div>
-                </div>
-                <div class="col-lg-6 col-xl-3">
+                </div> --}}
+                {{-- <div class="col-lg-6 col-xl-3">
                     <div class="footer-item-4">
                         <h4 class="mb-4 text-white">Our Gallary</h4>
                         <div class="row g-2">
@@ -1382,19 +1371,20 @@
                        </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
     <!-- Footer End -->
-
+    
+    
 
     <!-- Copyright Start -->
     <div class="container-fluid copyright bg-dark py-4">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site: Undone</a>, All rights reserved.</span>
+                    <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>tricat Philippines</a>, All rights reserved.</span>
                 </div>
                 <div class="col-md-6 my-auto text-center text-md-end text-white">
                     <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->

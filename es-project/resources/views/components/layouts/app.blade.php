@@ -31,7 +31,7 @@
         <title>{{ $title ?? 'Page Title' }}</title>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg bg-light">
+        {{-- <nav class="navbar navbar-expand-lg bg-light">
             <div class="container">
               <a class="navbar-brand" href="{{ URL('/dashboard') }}" wire:navigate>Home</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,15 +57,30 @@
                 </ul>
               </div>
             </div>
-        </nav>    
+        </nav>     --}}
+
         {{ $slot }}
 
-        <script data-navigate-once src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
         <script src="{{asset('frontend/lib/easing/easing.min.js')}}"></script>
         <script src="{{asset('frontend/lib/waypoints/waypoints.min.js')}}"></script>
         <script src="{{asset('frontend/lib/owlcarousel/owl.carousel.min.js')}}"></script>
+        
+
+<script>
+    function displayTime() {
+        var currentTime = new Date();
+        var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+        var formattedTime = new Intl.DateTimeFormat('en-US', options).format(currentTime);
+        document.getElementById('live-time').textContent = formattedTime;
+    }
+
+    setInterval(displayTime, 1000); // Update every second
+    displayTime(); // Initial display
+</script>
+        
         
 
         <!-- Template Javascript -->

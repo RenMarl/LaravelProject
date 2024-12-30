@@ -4,7 +4,6 @@ namespace App\Livewire;
 
 use App\Models\User;
 use Livewire\Component;
-use Livewire\Attributes\Title;
 use Livewire\Attributes\Validate;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
